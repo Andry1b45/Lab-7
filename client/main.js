@@ -24,8 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       alert("Dont left field empty");
       return;
-    }
-    
+    }    
     if (!isVisited) {
       alert("Firstly create account");
       return;
