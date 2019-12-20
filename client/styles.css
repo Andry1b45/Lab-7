@@ -1,0 +1,90 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font: 13px Helvetica, Arial;
+	background-image: url(https://freeios7.com/wp-content/uploads/freeios7.com_apple_wallpaper_pattern-tanger_iphone4.jpg);
+}
+
+.main {
+	width: 800px;
+	height: 600px;
+	margin: 25vh auto;
+	margin-top: 3%;
+	padding: 10px;
+	background-color: #d47d7dc4;
+	border-radius: 4px;
+	box-shadow: 0 1px 5px #0f0f04;
+	display: flex;
+}
+
+.form {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0 0 0;
+}
+
+.form input {
+	flex-grow: 1;
+}
+
+.form button {
+	width: 80px;
+	margin-left: 10px;
+	background-color: #cc5757;
+}
+
+.form.form--small {
+	padding-right: 10px;
+	max-width: 185px;
+}
+
+.form.form--small input {
+	max-width: 110px;
+}
+
+.scrollable {
+	overflow-y: scroll;
+	flex-grow: 1;
+}
+
+article, aside {
+	display: flex;
+	flex-direction: column;
+}
+
+article {
+	width: 390px;
+}
+
+aside {
+	width: 210px;
+}
+
+.username {
+	font-size: 16px;
+	background: white;
+	margin-right: 10px;
+	padding: 5px;
+	margin-bottom: 10px;
+	max-width: 180px;
+	height: 28px;
+	overflow: hidden;
+}
+
+button, input {
+	background: white;
+	height: 50px;
+	width: 110px;
+	line-height: 24px;
+	margin-top: 10%;
+	padding: 0 4px;
+}
+
+#rooms{
+	width: 50%;
+}

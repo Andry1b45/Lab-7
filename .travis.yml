@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - node app.js
+script:
+  - npm test
+notifications:
+  email: false
+deploy: 
+  provider: heroku
+  api_key: $key
+  app: "lab-7-node-kpi"
