@@ -1,13 +1,12 @@
 const socket = io(); 
 let messages; 
-const username;
 let isHistory = false; 
 let isVisited = false; 
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("room").onsubmit = e => {
     e.preventDefault(); //do not update
-    username = e.target.elements[0].value; 
+    const username = e.target.elements[0].value; 
     if (!e.target.elements[0].value)
     {
       alert("Enter username");
