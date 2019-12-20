@@ -29,7 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Firstly create account");
       return;
     }
-    socket.emit("message", e.target.elements[0].value); 
+    if(elem.username == username){
+      socket.emit("message", "===" + e.target.elements[0].value); 
+    }
+    else{
+      socket.emit("message", e.target.elements[0].value); 
+    }
     e.target.elements[0].value = ""; 
   };
   document.getElementById("toHistory").onclick = async () => {
@@ -46,9 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
           isHistory = true; 
           box.innerText = ""; 
           data.forEach(elem => {
-            if(elem.username == username){
-              box.innerText += `===[${elem.username}]: ${elem.message}`; 
-            }
             box.innerText += `[${elem.username}]: ${elem.message}`; 
           });
         });
