@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const username = e.target.elements[0].value; 
     if (!e.target.elements[0].value)
     {
-      alert("Введите имя пользователя");
+      alert("Enter username");
       return;
     }
     e.target.elements[0].value = ""; 
-    socket.emit("set username", username); //на сервер
+    socket.emit("set username", username); //to server
     document.getElementById("username").innerHTML = username; 
     isVisited = true;
   };
@@ -22,23 +22,22 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault(); 
     if (!e.target.elements[0].value)
     {
-      alert("Не оставляйте поле сообщения пустым");
+      alert("Dont left field empty");
       return;
     }
     if (!isVisited) {
-      //если не зарегались
-      alert("Сначала зарегистрируйтесь");
+      alert("Firstly create account");
       return;
     }
-    socket.emit("message", e.target.elements[0].value); //на сервер 
+    socket.emit("message", e.target.elements[0].value); 
     e.target.elements[0].value = ""; 
   };
   document.getElementById("toHistory").onclick = async () => {
     if (!isHistory && isVisited) {  
-      await fetch("/db") //запрос в бд
+      await fetch("/db") 
         .then(response => {
           if (response.ok) {
-            return response.json(); //обьект с данными с бд
+            return response.json(); //оbject with db data
           }
         })
         .then(data => {
@@ -64,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 socket.on("system new", name => {
-  document.getElementById("messages").innerText += `\t\t\ ${name} connected! \n`; //вывод сообщения о новом юзере
+  document.getElementById("messages").innerText += `\t\t\ ${name} connected! \n`; 
 });
 
 socket.on("render message", data => {
