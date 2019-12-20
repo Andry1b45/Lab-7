@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Dont left field empty");
       return;
     }
+    
     if (!isVisited) {
       alert("Firstly create account");
       return;
@@ -46,6 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
           isHistory = true; 
           box.innerText = ""; 
           data.forEach(elem => {
+            if(elem.username == username){
+              box.innerText += `===[${elem.username}]: ${elem.message}`; 
+            }
             box.innerText += `[${elem.username}]: ${elem.message}`; 
           });
         });
